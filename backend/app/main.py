@@ -7,7 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 origins = [
     "http://localhost:3000",
     "http://localhost:5173",
-    "https://course-review-app-public.vercel.app/"
+    "https://course-review-app-public.vercel.app/",
 ]
 
 @asynccontextmanager
@@ -21,7 +21,7 @@ app = FastAPI(lifespan = lifespan)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
